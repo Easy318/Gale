@@ -5,7 +5,10 @@
 ## 依赖安装
 
 ```python
+# 安装依赖包
 pip install -r requirements.txt
+# 添加该项目到项目路径
+python addProject.py
 ```
 
 这是基于Chrome浏览器的自动化测试  
