@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 import json
 from pathlib import Path
 from time import sleep
+from gale import settings
 
 
 class Gale():
@@ -171,3 +172,26 @@ class Gale():
                 (By.XPATH, ele_path)))
         else:
             raise TypeError(f"not type {by}")
+
+    def save2png(self, file_name):
+        '''获取当前浏览器窗口屏幕截图
+
+        Args:
+            file_name (str): 图片名(图片默认存放到data目录下)
+        '''
+
+        file_path = settings.DATA_DIR / file_name
+        self.driver.get_screenshot_as_file(str(file_path))
+        sleep(1)
+
+    def driver_close(self):
+        '''关闭当前窗口
+        '''
+
+        self.driver.close()
+
+    def driver_quit(self):
+        '''关闭整个浏览器
+        '''
+
+        self.driver.quit()
