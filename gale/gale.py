@@ -184,13 +184,13 @@ class Gale():
         self.driver.get_screenshot_as_file(str(file_path))
         sleep(1)
 
-    def driver_close(self):
+    def close(self):
         '''关闭当前窗口
         '''
 
         self.driver.close()
 
-    def driver_quit(self):
+    def quit(self):
         '''关闭整个浏览器
         '''
 
